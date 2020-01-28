@@ -1,13 +1,7 @@
 <?php
 
-class Voiture
+class Voiture extends Vehicule
 {
-  public $marque;
-  public $modele;
-  public $couleur;
-  public $dimensions = [0, 0, 0];
-  public $masse;
-  public $vitesse = 0;
 
   public function __construct(string $mar, string $mod, string $cou, array $dim, int $mas)
   {
@@ -18,9 +12,19 @@ class Voiture
     $this->masse = $mas;
   }
 
-  public function afficherMessage()
+  public function getMarque()
   {
-    echo "Je suis Michel";
+    return $this->marque;
+  }
+
+  public function setMarque($m) : void
+  {
+    $this->marque = $m;
+  }
+
+  public function calculerEnergieCinetique()
+  {
+    return  0.5 * $this->masse * $this->vitesse ** 2;
   }
 }
 
