@@ -2,7 +2,7 @@
 
 require './classes/Voiture.php';
 
-$voiture1 = new Voiture();
+$voiture1 = new Voiture("Lada", "Niva", "blanc", [2000, 1500, 800], 980);
 
 var_dump($voiture1);
 

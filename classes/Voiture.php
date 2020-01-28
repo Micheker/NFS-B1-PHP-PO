@@ -9,7 +9,7 @@ class Voiture
   public $masse;
   public $vitesse = 0;
 
-  public function __construct($mar, $mod, $cou, $dim, $mas)
+  public function __construct(string $mar, string $mod, string $cou, array $dim, int $mas)
   {
     $this->marque = $mar;
     $this->modele = $mod;
