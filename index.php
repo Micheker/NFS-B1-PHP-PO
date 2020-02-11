@@ -3,8 +3,16 @@ date_default_timezone_set('Europe/Paris');
 require_once './functions/classautoloader.php';
 spl_autoload_register('classautoloader');
 
-$formulaire = new formulaire();
-echo $formulaire->displayForm();
+Log::logWrite('Bonjour Michel');
+Demo::afficherMessage('Ah que Coucou!');
+
+$formulaire = new Form('index.php?page=validation', 'frmContact');
+// $formulaire->wesh();
+// echo $formulaire->displayForm();
+$html = $formulaire->beginHtml('Je fais des formulaires en objet');
+$html .= $formulaire->displayForm();
+$html .= $formulaire->endHtml();
+echo $html;
 
 
 // require_once './classes/Vehicule.php';
