@@ -3,16 +3,22 @@ date_default_timezone_set('Europe/Paris');
 require_once './functions/classautoloader.php';
 spl_autoload_register('classautoloader');
 
-Log::logWrite('Bonjour Michel');
-Demo::afficherMessage('Ah que Coucou!');
+// Log::logWrite('Bonjour Michel');
+// Demo::afficherMessage('Ah que Coucou!');
+$trucEudRequete = array();
+array_push($trucEudRequete, ['NULL', '', '']);
+array_push($trucEudRequete, [':title', 'Je suis un message', 2]);
+array_push($trucEudRequete, [':content', 'Je suis un contenu', 2]);
 
-$formulaire = new Form('index.php?page=validation', 'frmContact');
+$query = new Bdd();
+$query->inserer('contact', $trucEudRequete);
+// $formulaire = new Form('index.php?page=validation', 'frmContact');
 // $formulaire->wesh();
 // echo $formulaire->displayForm();
-$html = $formulaire->beginHtml('Je fais des formulaires en objet');
-$html .= $formulaire->displayForm();
-$html .= $formulaire->endHtml();
-echo $html;
+// $html = $formulaire->beginHtml('Je fais des formulaires en objet');
+// $html .= $formulaire->displayForm();
+// $html .= $formulaire->endHtml();
+// echo $html;
 
 
 // require_once './classes/Vehicule.php';
